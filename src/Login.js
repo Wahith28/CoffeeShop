@@ -1,33 +1,30 @@
-import './App.css';
 import {
-  Card,
-  Avatar,
-  Grid,
-  Paper,
-  TextField,
-  FormControlLabel,
-  Checkbox,
-  Button,
-  Typography,
-  Link,
-  makeStyles,
-} from "@material-ui/core";
-import React from "react";
-
-import { Lock } from '@mui/icons-material';
-
-const useStyles = makeStyles((theme) => ({
-  paperStyle: {
-    padding: 20,
-    height: "60vh",
-    [theme.breakpoints.down("sm")]: {
-      height: "70vh",
+    Card,
+    Avatar,
+    Grid,
+    Paper,
+    TextField,
+    FormControlLabel,
+    Checkbox,
+    Button,
+    Typography,
+    Link,
+    makeStyles,
+  } from "@material-ui/core";
+  import React from "react";
+  import LockIcon from "@material-ui/icons/Lock";
+  
+  const useStyles = makeStyles((theme) => ({
+    paperStyle: {
+      padding: 20,
+      height: "60vh",
+      [theme.breakpoints.down("sm")]: {
+        height: "70vh",
+      },
     },
-  },
-}));
-
-function App() {
-  const classes = useStyles();
+  }));
+  const Login = () => {
+    const classes = useStyles();
     // const paperStyle={padding:20, height:'50vh'}
     const avatarStyle = { backgroundColor: "#1bbd7e" };
     return (
@@ -92,7 +89,7 @@ function App() {
             <Card elevation={10} className={classes.paperStyle}>
               <Grid align="center">
                 <Avatar style={{ backgroundColor: "#ffcc00" }}>
-                  <Lock />
+                  <LockIcon />
                 </Avatar>
                 <Typography variant="h5">Login</Typography>
               </Grid>
@@ -108,7 +105,7 @@ function App() {
                 placeholder="Enter Password"
                 fullWidth
                 required
-                style={{ marginBottom: "10px", marginTop:"5px" }}
+                style={{ marginBottom: "10px" }}
               ></TextField>
               <FormControlLabel
                 style={{ width: "100%", color: "#ff6600" }}
@@ -128,7 +125,7 @@ function App() {
                 <b>SIGN IN</b>
               </Button>
               <Typography>
-                <Link href="/Reset" style={{ color: "#ff6600" }}>
+                <Link href="/Reset1" style={{ color: "#ff6600" }}>
                   Forgot Password?
                 </Link>
               </Typography>
@@ -143,6 +140,7 @@ function App() {
         </Grid>
       </Grid>
     );
-}
-
-export default App;
+  };
+  
+  export default Login;
+  
